@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-D - Happy Birthday Dhrithi! 💜✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" autoplay loop preload="auto">
+        <source src="assets/birthdaysong.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Music Control Button -->
+    <button id="musicToggle" class="music-toggle" title="Toggle Music">
+        <span class="music-icon">🎵</span>
+    </button>
+    <!-- Page 1: Welcome Screen -->
+    <div id="page1" class="page active">
+        <div class="sparkles-container"></div>
+        <div class="welcome-content">
+            <h1 class="birthday-title">Happieeee Birthday<br>Dhrithi 💜✨</h1>
+            <button id="beginBtn" class="glow-button">Click to Begin</button>
+        </div>
+    </div>
+
+    <!-- Page 2: Cake Cutting Ceremony -->
+    <div id="page2" class="page">
+        <div class="cake-container">
+            <div class="cake">
+                <!-- Top Tier (Lavender - Smallest) -->
+                <div class="cake-tier cake-top-tier">
+                    <div class="cake-layer-front"></div>
+                    <div class="cake-layer-top"></div>
+                    <div class="frosting-outline top-frosting"></div>
+                    <div class="tier-sprinkles">
+                        <div class="sprinkle sprinkle7"></div>
+                        <div class="sprinkle sprinkle8"></div>
+                        <div class="sprinkle sprinkle9"></div>
+                    </div>
+                </div>
+                
+                <!-- Middle Tier (Pink - Medium) -->
+                <div class="cake-tier cake-middle-tier">
+                    <div class="cake-layer-front"></div>
+                    <div class="cake-layer-top"></div>
+                    <div class="frosting-outline middle-frosting"></div>
+                    <div class="tier-sprinkles">
+                        <div class="sprinkle sprinkle4"></div>
+                        <div class="sprinkle sprinkle5"></div>
+                        <div class="sprinkle sprinkle6"></div>
+                    </div>
+                </div>
+                
+                <!-- Bottom Tier (Sky Blue - Largest) -->
+                <div class="cake-tier cake-bottom-tier">
+                    <div class="cake-layer-front"></div>
+                    <div class="cake-layer-top"></div>
+                    <div class="frosting-outline bottom-frosting"></div>
+                    <div class="tier-sprinkles">
+                        <div class="sprinkle sprinkle1"></div>
+                        <div class="sprinkle sprinkle2"></div>
+                        <div class="sprinkle sprinkle3"></div>
+                    </div>
+                </div>
+                
+                <!-- Candles -->
+                <div class="candles-container">
+                    <div class="candle candle1">
+                        <div class="candle-stick"></div>
+                        <div class="flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-glow"></div>
+                        </div>
+                    </div>
+                    <div class="candle candle2">
+                        <div class="candle-stick"></div>
+                        <div class="flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-glow"></div>
+                        </div>
+                    </div>
+                    <div class="candle candle3">
+                        <div class="candle-stick"></div>
+                        <div class="flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-glow"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dreamy Glow Effect -->
+                <div class="cake-glow"></div>
+            </div>
+            
+            <p class="cake-instruction">Click the cake to cut it! 🎂</p>
+            <button id="nextBtn" class="next-button hidden">Next →</button>
+        </div>
+        <div class="confetti-container"></div>
+    </div>
+
+    <!-- Page 3: Updated Puppy Box Game -->
+    <div id="page3" class="page">
+        <div class="dog-park-bg">
+            <div class="clouds">
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="cloud cloud3"></div>
+            </div>
+            <div class="grass"></div>
+        </div>
+        
+        <div class="game-container">
+            <!-- Game instruction at the top -->
+            <div class="game-instruction">
+                <p>Help this pupppy to find the hidden bone! Click the boxes 🐶. try to open all👀</p>
+            </div>
+
+            <!-- Clean 3x3 grid of gift boxes -->
+            <div class="boxes-container">
+                <div class="game-box box-1" data-type="wrong">🎁</div>
+                <div class="game-box box-2" data-type="wrong">🎁</div>
+                <div class="game-box box-3" data-type="wrong">🎁</div>
+                <div class="game-box box-4" data-type="wrong">🎁</div>
+                <div class="game-box box-5" data-type="wrong">🎁</div>
+                <div class="game-box box-6" data-type="wrong">🎁</div>
+                <div class="game-box box-7" data-type="wrong">🎁</div>
+                <div class="game-box box-8" data-type="wrong">🎁</div>
+                <div class="game-box box-9" data-type="correct">🎁</div>
+            </div>
+        </div>
+
+        <!-- Popup message for wrong boxes -->
+        <div id="wrongBoxMessage" class="wrong-box-popup hidden">
+            <div class="popup-content">
+                <p id="wrongBoxText"></p>
+                <button id="popupBackButton" class="popup-back-button">Back</button>
+            </div>
+        </div>
+
+        <!-- Final Birthday Message -->
+        <div id="finalMessage" class="final-message hidden">
+            <div class="message-content">
+                <h2>🎉 You found the bone! 🎉</h2>
+                <h3>Happieeeee Birthday Dhrithi!! 🎉💜🐶</h3>
+                <div class="message-text">
+                    <p>i hope your day is filled with everything you love and lots of sweet things (just like you 🍰✨)</p>
+                    
+                    <p>i still remember how we met, our SmashKart games, those fun texts, flirty jokes, and all. They always made me smile.</p>
+                    
+                    <p>You're one of a kind, Dhrithi. u are truly precious especially in a world where that's rare. u are So focused and so real.<br>
+                    keep shining and keep being the girl who chases her goals while staying kind. u deserve all the good things which life has to offer u and even more than that.</p>
+                    
+                    <p>take care of yourself, and don't stress too much okay? 🫶🏼<br>
+                    you're doing so much better than you think, and i'll always believe u you in this 💜</p>
+                    
+                    <p>and I know, that day when we had a deep talk, it went soo messy.<br>
+                    maybe I shouldn't have said so much so soon. and I can see after that day, things fell quiet. painfully quiet.<br>
+                    and even now, we're still stuck in that silence. but even if we don't talk anymore... I still care.<br>
+                    and I mean that in the softest, most genuine way.</p>
+                    
+                    <p>i just wanted to remind you, u are one of the sweetest person i met and you're not alone. not today. not ever.</p>
+                    
+                    <div class="signature">
+                        <p>with lots of love and gud vibes,<br>
+                        <strong>Murali 🐾</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
