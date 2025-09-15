@@ -194,10 +194,10 @@ function initializeBoxGame() {
     
     // Flirty messages for wrong boxes (boxes 1-8)
     const flirtyMessages = [
-        "Nothing here cutie, the bone in this just melted by seeing u.",
+        "Nothing here cutie, the bone in this just melted by seeing u 👀.",
         "Empty! Just like a world without u 🌍",
         "Empty box! I didn't see u today but u still look goddamm awesomeee ✨",
-        "Nothing here! uk? if u hold 2 diamonds in front of a mirror, u can see two of them 🤭",
+        "Nothing here! uk? if u hold a diamond in front of a mirror, u can see two of them 🤭",
         "Oops! Nothing here! Are u an alien? Cuz ur beauty is out of this world 💫👽",
         "Nahhh emptyy! ig ur mom is good at baking cuz she made a cutiee pieee 🥧",
         "Nope! but wait… did I mention ur smile lights up galaxies? 🌌",
@@ -719,3 +719,4 @@ function initializeBackgroundMusic() {
     
     console.log('🎵 Background music system initialized');
 }
+
